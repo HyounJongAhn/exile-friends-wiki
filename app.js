@@ -88,7 +88,7 @@
     window.scrollTo(0,0);
   }
   function showToast(message) { $('#toast').textContent = message; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3200); }
-  function closeMenu() { const restoreFocus = document.body.classList.contains('menu-open') && $('#sidebar').contains(document.activeElement); document.body.classList.remove('menu-open'); $('#backdrop').hidden = true; $('#menu-button').setAttribute('aria-expanded','false'); if (restoreFocus) $('#menu-button').focus(); }
+  function closeMenu() { const restoreFocus = document.body.classList.contains('menu-open') && $('#sidebar').contains(document.activeElement); document.body.classList.remove('menu-open'); $('#backdrop').hidden = true; $('#menu-button').setAttribute('aria-expanded','false'); $('#sidebar').inert = matchMedia('(max-width:760px)').matches; if (restoreFocus) $('#menu-button').focus(); }
   function openSearch() { closeMenu(); $('#search-dialog').showModal(); $('#search-input').value = ''; search(); $('#search-input').focus(); }
   function search() {
     const query = normalize($('#search-input').value);
@@ -120,10 +120,11 @@
   document.querySelectorAll('[data-search]').forEach(button => button.addEventListener('click', openSearch));
   $('#search-close').addEventListener('click', () => $('#search-dialog').close());
   $('#search-dialog').addEventListener('click', event => { if (event.target === $('#search-dialog')) { const bounds = event.target.getBoundingClientRect(); if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) event.target.close(); } });
-  $('#menu-button').addEventListener('click', () => { const open = document.body.classList.toggle('menu-open'); $('#backdrop').hidden = !open; $('#menu-button').setAttribute('aria-expanded', String(open)); if (open) $('#sidebar a')?.focus(); });
+  $('#menu-button').addEventListener('click', () => { const open = document.body.classList.toggle('menu-open'); $('#backdrop').hidden = !open; $('#menu-button').setAttribute('aria-expanded', String(open)); $('#sidebar').inert = !open; if (open) $('#sidebar a')?.focus(); });
   $('#backdrop').addEventListener('click', closeMenu);
   document.querySelector('.skip').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
   window.addEventListener('hashchange', render);
+  matchMedia('(max-width:760px)').addEventListener('change', closeMenu);
   nav(); fillIcons();
   if (data.hasIcon) $('.brand-emblem').innerHTML = '<img src="assets/rpg-instance-icon.png" alt="" width="48" height="48">';
   $('#version').textContent = '공략 ' + data.version + ' · ' + data.updated;
