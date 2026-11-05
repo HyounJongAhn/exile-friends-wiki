@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#131a1c">
+  <meta name="description" content="우리의 원정대 — Craft to Exile 2 친구 서버의 독립 한국어 공략. 직업과 스킬, 파티, 장비 수집, 설치와 서버 안내.">
+  <title>우리의 원정대 · Craft to Exile 2</title>
+  <link rel="icon" href="assets/rpg-instance-icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=ee49476c7683">
+  <script defer src="data.js?v=3446d1396ed3"></script>
+  <script defer src="app.js?v=66e3ee08acbe"></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="masthead">
+    <a class="brand" href="#home" aria-label="우리의 원정대 첫 화면"><span class="brand-emblem" data-icon="crest"></span><span>우리의 원정대<small>CRAFT TO EXILE 2</small></span></a>
+    <nav class="header-links" aria-label="주요 메뉴"><a href="#guide/rpg">처음 시작하기</a><a href="#guide/rpg-loot">장비와 도감</a><a href="#guide/rpg-host">서버 열기</a></nav>
+    <div class="header-actions"><button class="search-open" data-search aria-label="공략 검색"><span data-icon="search"></span><span>공략 검색</span><kbd>Ctrl K</kbd></button><button class="menu-button" id="menu-button" aria-label="공략 메뉴 열기" aria-controls="sidebar" aria-expanded="false"><span data-icon="menu"></span></button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="공략 메뉴"><a class="nav-link home-link" href="#home"><span data-icon="crest"></span>원정대의 기록</a><nav id="navigation"></nav><div class="sidebar-foot"><span class="status-dot"></span> 여섯 친구의 모험<small>전투도 생활도, 우리 속도로.</small><a href="https://hyounjongahn.github.io/sunlit-friends-wiki/" target="_blank" rel="noopener noreferrer">선릿밸리 공략은 별도 사이트에서 ↗</a></div></aside>
+    <button id="backdrop" class="backdrop" hidden aria-label="공략 메뉴 닫기"></button>
+    <div class="content-shell"><main id="main" tabindex="-1"></main><footer><span>우리의 원정대 · 비공식 친구 서버 공략</span><a href="#guide/rpg-verification">확인한 범위</a><span id="version"></span></footer></div>
+  </div>
+  <dialog id="search-dialog" aria-labelledby="search-title"><div class="search-heading"><div><small>원정대의 기록에서</small><h2 id="search-title">무엇을 찾고 있나요?</h2></div><button class="icon-button" id="search-close" aria-label="검색 닫기">×</button></div><label class="search-field"><span data-icon="search"></span><input id="search-input" type="search" autocomplete="off" placeholder="직업, 용병, 파티, 설치…" aria-label="공략 검색어"></label><p id="search-status" aria-live="polite"></p><div id="search-results"></div><div class="search-hint">↑ ↓ 결과 이동 · Enter 열기 · Esc 닫기</div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
