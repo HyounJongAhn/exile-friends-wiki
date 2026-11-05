@@ -15,3 +15,4 @@ dialog{padding:0;border:1px solid #536153;border-radius:10px;background:#192325;
 @media(max-width:370px){.hero h1{font-size:30px}.hero-copy{padding-top:100px}.button{padding:11px 13px}.hero .buttons{gap:10px}.path-card{padding:17px;column-gap:11px}.quickbar{gap:10px}.style-picker button{font-size:13px}.section-heading h2{font-size:20px}.section-heading>a{font-size:11px}.article-header h1{font-size:27px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 .map-preview{margin:28px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#26302c}.map-preview img{display:block;width:100%;height:auto}.map-preview figcaption{font-size:13px;line-height:1.8;color:#bac6ba;padding:14px 18px}.prose .map-preview+figure{margin-top:24px}
+@media(max-width:1050px){.article-layout>.prose{width:100%;max-width:100%}}
