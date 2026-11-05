@@ -125,7 +125,7 @@
   document.querySelector('.skip').addEventListener('click', event => { event.preventDefault(); $('#main').focus(); });
   window.addEventListener('hashchange', render);
   nav(); fillIcons();
-  if (data.hasIcon) $('.brand-emblem').innerHTML = '<img src="assets/rpg-icon.png" alt="" width="48" height="48">';
+  if (data.hasIcon) $('.brand-emblem').innerHTML = '<img src="assets/rpg-instance-icon.png" alt="" width="48" height="48">';
   $('#version').textContent = '공략 ' + data.version + ' · ' + data.updated;
   render();
 })();
